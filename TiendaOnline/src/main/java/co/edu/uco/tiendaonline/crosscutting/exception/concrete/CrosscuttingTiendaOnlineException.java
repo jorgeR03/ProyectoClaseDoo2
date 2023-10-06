@@ -3,33 +3,28 @@ package co.edu.uco.tiendaonline.crosscutting.exception.concrete;
 import co.edu.uco.tiendaonline.crosscutting.exception.TiendaOnlineException;
 import co.edu.uco.tiendaonline.crosscutting.exception.enumerator.LugarException;
 
-public class DataTiendaOnlineException extends TiendaOnlineException {
+public class CrosscuttingTiendaOnlineException extends TiendaOnlineException{
 
-	private static final long serialVersionUID = -9177484194126685659L;
-
-	
-	protected DataTiendaOnlineException(final Throwable exceptionRaiz, String mensajeUsuario,
+	protected CrosscuttingTiendaOnlineException(Throwable exceptionRaiz, String mensajeUsuario,
 			String mensajeTecnico) {
-		super(LugarException.DATA, exceptionRaiz, mensajeUsuario, mensajeTecnico);
+		super(LugarException.CROSSCUTTING ,exceptionRaiz, mensajeUsuario, mensajeTecnico);
 	}
-	
 	public static final TiendaOnlineException crear(final String mensajeUsuario) {
-		return new DataTiendaOnlineException(null, mensajeUsuario, mensajeUsuario);
+		return new CrosscuttingTiendaOnlineException(null, mensajeUsuario, mensajeUsuario);
 		
 	}
 	
 	public static final TiendaOnlineException crear(final String mensajeUsuario, final String mensajeTecnico) {
-		return new DataTiendaOnlineException(null, mensajeUsuario, mensajeTecnico);
+		return new CrosscuttingTiendaOnlineException(null, mensajeUsuario, mensajeTecnico);
 		
 	}
 	
 	public static final TiendaOnlineException crear(final Throwable exceptionRaiz, final String mensajeUsuario, final String mensajeTecnico) {
-		return new DataTiendaOnlineException(exceptionRaiz, mensajeUsuario, mensajeTecnico);
+		return new CrosscuttingTiendaOnlineException(exceptionRaiz, mensajeUsuario, mensajeTecnico);
 		
 	}
+	
+	
+	
 
-	
-	
-
-	
 }

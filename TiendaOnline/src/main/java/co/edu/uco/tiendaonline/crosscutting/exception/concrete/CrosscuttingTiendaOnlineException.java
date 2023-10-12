@@ -5,6 +5,11 @@ import co.edu.uco.tiendaonline.crosscutting.exception.enumerator.LugarException;
 
 public class CrosscuttingTiendaOnlineException extends TiendaOnlineException{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected CrosscuttingTiendaOnlineException(Throwable exceptionRaiz, String mensajeUsuario,
 			String mensajeTecnico) {
 		super(LugarException.CROSSCUTTING ,exceptionRaiz, mensajeUsuario, mensajeTecnico);

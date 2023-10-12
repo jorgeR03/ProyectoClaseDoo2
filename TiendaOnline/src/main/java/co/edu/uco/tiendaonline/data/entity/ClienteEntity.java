@@ -57,12 +57,10 @@ public class ClienteEntity {
 	private boolean numeroTelefonoMOvilConfirmado;
 	
 	
-	private ClienteEntity(final UUID id, final TipoIdentificacionEntity tipoIdentificacion, final String identificacion,final String primerNombre,
-			final String segundoNombre, final String primerApellido,final String segundoApellido,final String correoElectronico,
-			final boolean correoElectronicoConfirmado,final String numeroTelefonoMovil,final boolean numeroTelefonoMOvilConfirmado) {
+	
 		
 		
-	}
+	
 
 
 	public final UUID getId() {

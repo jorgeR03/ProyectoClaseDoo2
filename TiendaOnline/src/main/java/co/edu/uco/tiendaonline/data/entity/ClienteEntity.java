@@ -1,176 +1,92 @@
 package co.edu.uco.tiendaonline.data.entity;
 
+import java.sql.Date;
 import java.util.UUID;
+
+import co.edu.uco.tiendaonline.crosscutting.util.UtilTexto;
+import co.edu.uco.tiendaonline.data.entity.support.CorreoElectronicoEntity;
+import co.edu.uco.tiendaonline.data.entity.support.NumeroTelefonoMovilClienteEntity;
+import co.edu.uco.tiendaonline.data.entity.support.nombreCompletoClienteEntity;
 
 public class ClienteEntity {
 	
-	public static class NombreCompletoClienteEntityData {
-		private String primerNombre;
-		private String SegundoNombre;
-		private String primerApellido;
-		private String segundoApellido;
-
-		public NombreCompletoClienteEntityData() {
-		}
-
-		public String getPrimerNombre() {
-			return primerNombre;
-		}
-
-		public void setPrimerNombre(final String primerNombre) {
-			this.primerNombre = primerNombre;
-		}
-
-		public String getSegundoNombre() {
-			return SegundoNombre;
-		}
-
-		public void setSegundoNombre(final String segundoNombre) {
-			SegundoNombre = segundoNombre;
-		}
-
-		public String getPrimerApellido() {
-			return primerApellido;
-		}
-
-		public void setPrimerApellido(final String primerApellido) {
-			this.primerApellido = primerApellido;
-		}
-
-		public String getSegundoApellido() {
-			return segundoApellido;
-		}
-
-		public void setSegundoApellido(final String segundoApellido) {
-			this.segundoApellido = segundoApellido;
-		}
-	}
-
-
 	private UUID id;
-	private TipoIdentificacionEntity tipoIdentificacion;
-	private String Identificacion; 
-	private NombreCompletoClienteEntityData data = new NombreCompletoClienteEntityData();
-	private String correoElectronico; 
-	private boolean correoElectronicoConfirmado; 
-	private String numeroTelefonoMovil; 
-	private boolean numeroTelefonoMOvilConfirmado;
+	private TipoIdentificacionEntity tipoidentificacion;
+	private String identificacion;
+	private nombreCompletoClienteEntity nombreCompleto;
+	private CorreoElectronicoEntity correoElectronico;
+	private NumeroTelefonoMovilClienteEntity numeroTelefonoMovil;
+	private Date fechaNacimiento;
+	
+	
+	public ClienteEntity(UUID id, TipoIdentificacionEntity tipoidentificacion, String identificacion,
+			nombreCompletoClienteEntity nombreCompleto, CorreoElectronicoEntity correoElectronico,
+			NumeroTelefonoMovilClienteEntity numeroTelefonoMovil, Date fechaNacimiento) {
+		setId (id);
+		setTipoidentificacion (new TipoIdentificacionEntity());
+		setIdentificacion (UtilTexto.VACIO);
+		setNombreCompleto (new nombreCompletoClienteEntity());
+		setCorreoElectronico (new CorreoElectronicoEntity());
+		setNumeroTelefonoMovil (new NumeroTelefonoMovilClienteEntity());
+		setFechaNacimiento (fechaNacimiento);
+	}
+	
+	
+	public ClienteEntity() {
+		setId (id);
+		setTipoidentificacion (tipoidentificacion);
+		setIdentificacion (identificacion);
+		setNombreCompleto (nombreCompleto);
+		setCorreoElectronico (correoElectronico);
+		setNumeroTelefonoMovil (numeroTelefonoMovil);
+		setFechaNacimiento (fechaNacimiento);
+	}
 	
 	
 	
-		
-		
-	
-
-
 	public final UUID getId() {
 		return id;
 	}
-
-
-	private final void setId(final UUID id) {
+	public final void setId(UUID id) {
 		this.id = id;
 	}
-
-
-	private final void setTipoIdentificacion(final TipoIdentificacionEntity tipoIdentificacion) {
-		this.tipoIdentificacion = tipoIdentificacion;
+	public final TipoIdentificacionEntity getTipoidentificacion() {
+		return tipoidentificacion;
 	}
-
-
-	private final void setIdentificacion(final String identificacion) {
-		Identificacion = identificacion;
+	public final void setTipoidentificacion(TipoIdentificacionEntity tipoidentificacion) {
+		this.tipoidentificacion = tipoidentificacion;
 	}
-
-
-	private final void setPrimerNombre(final String primerNombre) {
-		this.data.setPrimerNombre(primerNombre);
-	}
-
-
-	private final void setSegundoNombre(final String segundoNombre) {
-		data.setSegundoNombre(segundoNombre);
-	}
-
-
-	private final void setPrimerApellido(final String primerApellido) {
-		this.data.setPrimerApellido(primerApellido);
-	}
-
-
-	private final void setSegundoApellido(final String segundoApellido) {
-		this.data.setSegundoApellido(segundoApellido);
-	}
-
-
-	private final void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
-	}
-
-
-	private final void setCorreoElectronicoConfirmado(final boolean correoElectronicoConfirmado) {
-		this.correoElectronicoConfirmado = correoElectronicoConfirmado;
-	}
-
-
-	private final void setNumeroTelefonoMovil(final String numeroTelefonoMovil) {
-		this.numeroTelefonoMovil = numeroTelefonoMovil;
-	}
-
-
-	private final void setNumeroTelefonoMOvilConfirmado(boolean numeroTelefonoMOvilConfirmado) {
-		this.numeroTelefonoMOvilConfirmado = numeroTelefonoMOvilConfirmado;
-	}
-
-
-	public final TipoIdentificacionEntity getTipoIdentificacion() {
-		return tipoIdentificacion;
-	}
-
-
 	public final String getIdentificacion() {
-		return Identificacion;
+		return identificacion;
 	}
-
-
-	public final String getPrimerNombre() {
-		return data.getPrimerNombre();
+	public final void setIdentificacion(String identificacion) {
+		this.identificacion = identificacion;
 	}
-
-
-	public final String getSegundoNombre() {
-		return data.getSegundoNombre();
+	public final nombreCompletoClienteEntity getNombreCompleto() {
+		return nombreCompleto;
 	}
-
-
-	public final String getPrimerApellido() {
-		return data.getPrimerApellido();
+	public final void setNombreCompleto(nombreCompletoClienteEntity nombreCompleto) {
+		this.nombreCompleto = nombreCompleto;
 	}
-
-
-	public final String getSegundoApellido() {
-		return data.getSegundoApellido();
-	}
-
-
-	public final String getCorreoElectronico() {
+	public final CorreoElectronicoEntity getCorreoElectronico() {
 		return correoElectronico;
 	}
-
-
-	public final boolean isCorreoElectronicoConfirmado() {
-		return correoElectronicoConfirmado;
+	public final void setCorreoElectronico(CorreoElectronicoEntity correoElectronico) {
+		this.correoElectronico = correoElectronico;
 	}
-
-
-	public final String getNumeroTelefonoMovil() {
+	public final NumeroTelefonoMovilClienteEntity getNumeroTelefonoMovil() {
 		return numeroTelefonoMovil;
 	}
-
-
-	public final boolean isNumeroTelefonoMOvilConfirmado() {
-		return numeroTelefonoMOvilConfirmado;
+	public final void setNumeroTelefonoMovil(NumeroTelefonoMovilClienteEntity numeroTelefonoMovil) {
+		this.numeroTelefonoMovil = numeroTelefonoMovil;
 	}
+	public final Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public final void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	
 	
 	
 

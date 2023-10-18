@@ -9,12 +9,19 @@ public final class TipoIdentificacionEntity {
 	private String nombre; 
 	private boolean estado;
 	
-	private TipoIdentificacionEntity(final UUID id, final String codigo, final String nombre, final boolean estado) {
+	public TipoIdentificacionEntity(final UUID id, final String codigo, final String nombre, final boolean estado) {
 		setId(id);
 		setCodigo(codigo);
 		setNombre(nombre);
 		setEstado(estado);
 		
+	}
+	
+	public TipoIdentificacionEntity() {
+		setId(id);
+		setCodigo(codigo);
+		setNombre(nombre);
+		setEstado(estado);
 	}
 	
 	

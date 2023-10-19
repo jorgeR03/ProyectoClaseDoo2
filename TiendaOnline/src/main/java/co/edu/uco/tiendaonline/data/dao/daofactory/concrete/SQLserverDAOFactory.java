@@ -6,9 +6,9 @@ import co.edu.uco.tiendaonline.data.dao.ClienteDAO;
 import co.edu.uco.tiendaonline.data.dao.TipoIdentificacionDAO;
 import co.edu.uco.tiendaonline.data.dao.concrete.sqlserver.ClienteSQLServerDAO;
 import co.edu.uco.tiendaonline.data.dao.concrete.sqlserver.TipoIdentificacionSQLServerDAO;
-import co.edu.uco.tiendaonline.data.dao.daofactory.DAOfactory;
+import co.edu.uco.tiendaonline.data.dao.daofactory.DAOFactory;
 
-public final class SQLserverDAOFactory extends DAOfactory {
+public final class SQLserverDAOFactory extends DAOFactory {
 
 	private Connection conexion;
 

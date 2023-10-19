@@ -5,9 +5,9 @@ import co.edu.uco.tiendaonline.data.dao.TipoIdentificacionDAO;
 import co.edu.uco.tiendaonline.data.dao.daofactory.concrete.SQLserverDAOFactory;
 
 
-public abstract class DAOfactory {
+public abstract class DAOFactory {
 	
-	public static final DAOfactory obtenerDAOFactory(final TipoDAOFactory factoria) {
+	public static final DAOFactory obtenerDAOFactory(final TipoDAOFactory factoria) {
 		
 		switch (factoria) {
 		case SQlSERVER: {

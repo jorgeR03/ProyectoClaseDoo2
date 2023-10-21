@@ -50,4 +50,10 @@ public class TipoIdentificacionEntityMapper implements EntityMapper<TipoIdentifi
 		return instancia.toEntity(domain);
 	}
 
+	@Override
+	public TipoIdentificacionDomain toDomain(TipoIdentificacionDomain domain) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

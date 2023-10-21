@@ -60,6 +60,11 @@ public class TipoIdentificacionDomain {
 		return this;
 
 	}
+
+	public static TipoIdentificacionDomain crear(UUID id2, String codigo2, String nombre2, boolean estado2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
